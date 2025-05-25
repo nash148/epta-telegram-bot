@@ -137,10 +137,8 @@ async def process_with_openai(user_answers):
 #     await update.message.reply_text(reply)
 
 
-if __name__ == "__main__":
+def create_application():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
-    # app.add_handler(CommandHandler("start", start))
-    # app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, chat_with_gpt))
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
@@ -153,6 +151,4 @@ if __name__ == "__main__":
     )
 
     app.add_handler(conv_handler)
-
-    print("Bot is running...")
-    app.run_polling()
+    return app

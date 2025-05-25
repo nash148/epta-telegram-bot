@@ -1,0 +1,20 @@
+{
+    "functions": {
+        "api/telegram.py": {
+            "runtime": "python3.9"
+        },
+        "status.py": {
+            "runtime": "python3.9"
+        }
+    },
+    "routes": [
+        {
+            "src": "/webhook",
+            "dest": "api/telegram.py"
+        },
+        {
+            "src": "/",
+            "dest": "status.py"
+        }
+    ]
+}
