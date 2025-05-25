@@ -151,4 +151,5 @@ def create_application():
     )
 
     app.add_handler(conv_handler)
+    print("Get app")
     return app
