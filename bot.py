@@ -138,6 +138,7 @@ async def process_with_openai(user_answers):
 
 
 def create_application():
+    print("✅ Bot application is initializing...")
     app = ApplicationBuilder().token(BOT_TOKEN).build()
 
     conv_handler = ConversationHandler(
@@ -151,5 +152,5 @@ def create_application():
     )
 
     app.add_handler(conv_handler)
-    print("Get app")
+    print("✅ Handlers registered successfully.")
     return app

@@ -6,7 +6,7 @@
         },
         {
             "src": "/",
-            "dest": "status.py"
+            "dest": "api/status.py"
         }
     ]
 }

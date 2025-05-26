@@ -5,6 +5,7 @@ from bot import create_application
 app = create_application()
 
 async def handler(request):
+    print(f"📩 Incoming request: {request.method}")
     if request.method != "POST":
         return {
             "statusCode": 405,
@@ -12,11 +13,14 @@ async def handler(request):
         }
 
     try:
-        update_data = json.loads(request.body)
-        update = Update.de_json(update_data, app.bot)
+        body = json.loads(request.body)
+        print(f"📦 Payload received: {body}")
+        update = Update.de_json(body, app.bot)
         await app.process_update(update)
-        return { "statusCode": 200, "body": "OK" }
+        print("✅ Update processed successfully.")
+        return {"statusCode": 200, "body": "OK"}
     except Exception as e:
+        print(f"❌ Error occurred: {e}")
         return {
             "statusCode": 500,
             "body": f"Error: {str(e)}"
