@@ -1,7 +1,7 @@
-# main_local.py
-from bot import create_application
+# # main_local.py
+# from bot import create_application
 
-if __name__ == "__main__":
-    app = create_application()
-    print("Bot is running...")
-    app.run_polling()
+# if __name__ == "__main__":
+#     app = create_application()
+#     print("Bot is running...")
+#     app.run_polling()
